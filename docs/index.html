@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h2>Cascade Persist & Remove in Doctrine</h2>
+        </section>
+
+        <section>
+            <h5>Erklärung: <br> Cascade Persist & Cascade Remove</h5>
+            <section>
+                <br>
+                <li class="fragment fade-up highlight-blue">Cascade ist ein Begriff, der im <b>ORM</b>
+                    (Object-Relational Mapping) verwendet wird
+                </li>
+                <br>
+                <li class="fragment fade-up highlight-current-red">Das Verhalten beim Speichern (persist) bzw. Löschen
+                    (remove) von Objekten mit Beziehungen in einer Datenbank wird beschrieben
+                </li>
+                <br>
+                <li class="fragment fade-up highlight-current-red">Automatische Übertragung von Befehlen/Aktionen von
+                    einem "Vaterobjekt" auf ein "Kindobjekt"
+                </li>
+            </section>
+        </section>
+
+        <section>
+            <h6>Vorteile:</h6>
+            <section>
+                <li class="fragment fade-up highlight-current-red">Datenintegrität</li>
+                <li class="fragment fade-up highlight-current-red">Vereinfachte Datenbankinteraktion</li>
+                <li class="fragment fade-up highlight-current-red">Flexibilität</li>
+                <li class="fragment fade-up highlight-current-red">Zeitersparnis</li>
+            </section>
+        </section>
+
+		<section>
+			<h6>Nachteile:</h6>
+			<section>
+				<li class="fragment fade-up highlight-current-red">Performance</li>
+				<li class="fragment fade-up highlight-current-red">Unerwartete Datenänderungen</li>
+				<li class="fragment fade-up highlight-current-red">Schwierigkeiten bei der Datenmigration</li>
+			</section>
+		</section>
+
+        <section>
+            <h6>Beispiel: CartProduct.php</h6>
+            <section>
+                <img src="media/Screenshot_CartProduct.png">
+            </section>
+        </section>
+
+        <section>
+            <h6>Beispiel: Cart.php</h6>
+            <section>
+                <img src="media/Screenshot_Cart.png">
+            </section>
+        </section>
+
+        <section>
+            <h6>Weitere Cascade-Operationen:</h6>
+            <br>
+            <section>
+                <li class="fragment fade-in-then-semi-out">persist</li>
+                <li class="fragment fade-in-then-semi-out">remove</li>
+                <li class="fragment fade-in-then-semi-out">merge</li>
+                <li class="fragment fade-in-then-semi-out">detach</li>
+                <li class="fragment fade-in-then-semi-out">refresh</li>
+                <li class="fragment fade-in-then-semi-out">all</li>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+</script>
+</body>
+</html>
